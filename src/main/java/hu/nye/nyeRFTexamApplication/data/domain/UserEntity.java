@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * * Represents a user in the database. Contains the users' id, name.
  */
@@ -28,6 +31,14 @@ public class UserEntity {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.EAGER )
+    @JoinTable(
+            name = "exam_registration",
+            joinColumns = {@JoinColumn(name="user_id")},
+            inverseJoinColumns = {@JoinColumn(name="exam_id")}
+    )
+    private Set<ExamEntity> exams = new HashSet<ExamEntity>();
 
     public Long getId() {
         return id;
@@ -69,5 +80,12 @@ public class UserEntity {
         this.fullName = fullName;
     }
 
+    public Set<ExamEntity> getExams() {
+        return exams;
+    }
+
+    public void setExams(Set<ExamEntity> exams) {
+        this.exams = exams;
+    }
 }
 

@@ -34,9 +34,7 @@ public class DefaultUserService implements UserServiceInterface{
     public List<UserView> getAllUser() {
         Collection<UserEntity> userEntities  = userDataAccessObject.getAllUser();
         List<UserView> users = transformer.transform(userEntities);
-        return users.stream()
-                .sorted()
-                .collect(Collectors.toList());
+        return users.stream().sorted().collect(Collectors.toList());
     }
 
     @Override

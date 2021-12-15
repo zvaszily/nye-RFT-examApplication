@@ -1,7 +1,10 @@
 package hu.nye.nyeRFTexamApplication.web.domain;
 
+import hu.nye.nyeRFTexamApplication.data.domain.ExamEntity;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.Set;
 
 /**
  * Web layer representation of a user.
@@ -15,6 +18,7 @@ public class UserView implements Comparable<UserView>{
     private String fullName;
     private String emailAddress;
     private String password;
+    private Set<ExamEntity> exams;
 
     @Override
     public int compareTo(UserView o) {
