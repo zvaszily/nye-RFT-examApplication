@@ -8,11 +8,11 @@ import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 /**
- * Represents a CREATE request and contains necessary data about the user.
+ * Represents a CREATE request and contains necessary data about the user exam.
  */
 @Builder
 @Data
-public class CreateUserRequest {
+public class CreateUserExamRequest {
 
     @NotBlank(message = "Name is mandatory")
     private String userName;
@@ -22,4 +22,5 @@ public class CreateUserRequest {
     private String emailAddress;
     @NotBlank(message = "Password is mandatory")
     private String password;
+    private Set<ExamEntity> exams;
 }

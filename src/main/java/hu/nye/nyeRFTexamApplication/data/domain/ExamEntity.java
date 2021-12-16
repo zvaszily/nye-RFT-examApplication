@@ -30,7 +30,7 @@ public class ExamEntity {
 
     @Column(name = "exam_location", nullable = false )
     private String examLocation;
-   // @ManyToMany(mappedBy = "exams")
+    @ManyToMany(mappedBy = "exams")
    // private Set<UserEntity> user = new HashSet<UserEntity>();
 
     public Long getId() {
