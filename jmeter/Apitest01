@@ -1,0 +1,6 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1639832720409,9,GetAllUsers,200,,Thread Group 1-1,text,true,,573,122,1,1,http://localhost:8080/user/users,8,0,2
+1639832720418,4,AddUser,201,,Thread Group 1-1,,true,,121,293,1,1,http://localhost:8080/user/add,4,0,0
+1639832720422,3,FindNewUser,200,,Thread Group 1-1,text,true,,679,122,1,1,http://localhost:8080/user/users,3,0,0
+1639832720426,2,GetSingleUser,200,,Thread Group 1-1,text,true,,278,119,1,1,http://localhost:8080/user/22,2,0,0
+1639832720428,5,DeleteNewUser,200,,Thread Group 1-1,,true,,121,212,1,1,http://localhost:8080/user/delete/22,5,0,0
