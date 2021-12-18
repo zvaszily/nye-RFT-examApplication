@@ -31,6 +31,12 @@ public class DefaultUserService implements UserServiceInterface{
     }
 
     @Override
+    public UserView getUserByEmailAddress(String emailAddress) {
+        UserEntity userEntity = userDataAccessObject.getUserByEmailAddress(emailAddress);
+        return transformer.transform(userEntity);
+    }
+
+    @Override
     public List<UserView> getAllUser() {
         Collection<UserEntity> userEntities  = userDataAccessObject.getAllUser();
         List<UserView> users = transformer.transform(userEntities);

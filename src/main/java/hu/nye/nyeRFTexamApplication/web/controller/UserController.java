@@ -15,6 +15,7 @@ import java.util.List;
 public class UserController {
 
     private static final String GET_USER_MAPPING = "/user/{id}";
+    private static final String GET_USER_MAPPING_By_EMAIL = "/user/email/{emailAddress}";
     private static final String GET_ALL_USER_MAPPING = "/user/users";
     private static final String ADD_USER = "/user/add";
     private static final String DELETE_USER_MAPPING = "/user/delete/{id}";
@@ -29,6 +30,11 @@ public class UserController {
     @GetMapping(path = GET_USER_MAPPING)
     public UserView getUser(@PathVariable @NotNull Long id){
         return userService.getUserById(id);
+    }
+
+    @GetMapping(path = GET_USER_MAPPING_By_EMAIL)
+    public UserView getUserByEmail(@PathVariable @NotNull String emailAddress){
+        return userService.getUserByEmailAddress(emailAddress);
     }
 
     @GetMapping(path = GET_ALL_USER_MAPPING)

@@ -27,6 +27,15 @@ public class DefaultUserDataAccessObject implements UserDataAccessObjectInterfac
     }
 
     @Override
+    public UserEntity getUserByEmailAddress(String emailAddress) {
+        try {
+            return userRepository.findByEmailAddress(emailAddress);
+        } catch (EmptyResultDataAccessException e){
+            throw new UserNotFoundException("User not found with email address: " + emailAddress);
+        }
+    }
+
+    @Override
     public Collection<UserEntity> getAllUser() {
         return userRepository.findAll();
     }

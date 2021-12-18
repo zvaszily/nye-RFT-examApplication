@@ -11,6 +11,8 @@ public interface UserDataAccessObjectInterface {
 
     UserEntity getUserById(Long userId);
 
+    UserEntity getUserByEmailAddress(String emailAddress);
+
     Collection<UserEntity> getAllUser();
 
     void addUser(UserEntity entity);
