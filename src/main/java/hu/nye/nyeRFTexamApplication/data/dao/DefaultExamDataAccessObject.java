@@ -2,10 +2,9 @@ package hu.nye.nyeRFTexamApplication.data.dao;
 
 import hu.nye.nyeRFTexamApplication.data.domain.ExamEntity;
 import hu.nye.nyeRFTexamApplication.data.repository.ExamRepository;
-import hu.nye.nyeRFTexamApplication.error.EmailAlreadyUseException;
+import hu.nye.nyeRFTexamApplication.error.ExamNotFoundException;
 import hu.nye.nyeRFTexamApplication.error.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +22,7 @@ public class DefaultExamDataAccessObject implements ExamDataAccessObjectInterfac
 
     @Override
     public ExamEntity getExamById(Long examId) {
-        return examRepository.findById(examId).orElseThrow(() -> new UserNotFoundException("User not found with id: " + examId));
+        return examRepository.findById(examId).orElseThrow(() -> new ExamNotFoundException("User not found with id: " + examId));
     }
 
     @Override
