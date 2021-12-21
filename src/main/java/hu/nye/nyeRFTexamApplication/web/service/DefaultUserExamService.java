@@ -3,7 +3,6 @@ package hu.nye.nyeRFTexamApplication.web.service;
 import hu.nye.nyeRFTexamApplication.data.dao.UserExamDataAccessObjectInterface;
 import hu.nye.nyeRFTexamApplication.data.domain.UserEntity;
 import hu.nye.nyeRFTexamApplication.web.domain.UserExamView;
-import hu.nye.nyeRFTexamApplication.web.domain.UserView;
 import hu.nye.nyeRFTexamApplication.web.transformer.UserExamTransformer;
 import org.springframework.stereotype.Service;
 
